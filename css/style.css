@@ -1,6 +1,5 @@
 body{
-    margin: 0;
-    padding: 0;
+    margin: auto;
 }
 
 .form-container{
@@ -64,4 +63,10 @@ form button {
     padding: 10px 15px;
     cursor: pointer;
     font-size: 20px;
+}
+
+.main-container{
+    width: 80%;
+    margin: auto;
+    margin-top: 10px;
 }
