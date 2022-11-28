@@ -43,29 +43,81 @@
         </div>
       </nav>
       <div class="main-container">
-        <h2>Agregar nuevo ejemplar</h2>
+        <h2 class="tittle">Agregar nuevo ejemplar</h2>
         <div class="agregar-container">
-          <div class="input-container">
-            <label for="eCodigo">Codigo</label>
-            <select id="eCodigo">
-              <option selected value="1">1</option>
-              <option value="2">1</option>
-              <option value="3">1</option>
-              <option value="4">1</option>
-            </select>
-          </div>
-          <div class="input-container">
-            <label for="eEspecie">Especie</label>
-            <select id="eEspecie">
-              <option selected value="1">Especie1</option>
-              <option value="2">Especie1</option>
-              <option value="3">Especie1</option>
-              <option value="4">Especie1</option>
-            </select>
-          </div>
-          <div class="input-container">
-            <label for="eFechaN">Fecha de nacimiento</label>
-          </div>
+          <form action="" method="post">
+            <div class="input-container">
+              <label for="eCodigo">Código: </label>
+              <select id="eCodigo" required>
+                <option selected value="1">1</option>
+                <option value="2">1</option>
+                <option value="3">1</option>
+                <option value="4">1</option>
+              </select>
+            </div>
+            <div class="input-container">
+              <label for="eEspecie">Especie: </label>
+              <select id="eEspecie" required>
+                <option selected value="1">Especie1</option>
+                <option value="2">Especie1</option>
+                <option value="3">Especie1</option>
+                <option value="4">Especie1</option>
+              </select>
+            </div>
+            <div class="input-container">
+              <label for="eFechaN">Fecha de nacimiento: </label>
+              <input type="date" id="eFechaN" max="2022-12-30" required>
+            </div>
+            <div class="input-container">
+              <label for="eFechaD">Fecha de defunción: </label>
+              <input type="date" id="eFechaD" max="2022-12-30" required>
+            </div>
+            <br>
+            <div class="input-container">
+              <label for="eNombre">Nombre: </label>
+              <input type="text" id="eNombre" required>
+            </div>
+            <div class="input-container">
+              <label for="ePadre">Padre: </label>
+              <input type="text" id="ePadre" required>
+            </div>
+            <div class="input-container">
+              <label for="eMadre">Madre: </label>
+              <input type="text" id="eMadre" required>
+            </div>
+            <div class="input-container form-check">
+              <label class="form-check-label" for="defaultCheck1">Pertence a un zoo</label>
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" required>
+            </div>
+            <button class="btn btn-success btnAgregar" id="agregarButton">Agregar</button>
+          </form>
+        </div>
+        <h2 class="tittle">Agregar nueva especie</h2>
+        <div class="agregar-container">
+          <form action="" method="post">
+            <div class="input-container">
+              <label for="eNombreG">Nombre genérico: </label>
+              <input type="text" id="eNombreG">
+            </div>
+            <div class="input-container">
+              <label for="eNombreC">Nombre científico: </label>
+              <input type="text" id="eNombreC">
+            </div>
+            <div class="input-container">
+              <label for="eFamilia">Familia: </label>
+              <input type="text" id="eFamilia">
+            </div>
+            <br>
+            <div class="input-container">
+              <label for="eDescripcion">Descripcion de cuidado </label>
+              <textarea class="tE" id="eDescripcion" rows="3" cols="50"></textarea>
+            </div>
+            <div class="input-container">
+              <label for="eExplicacion">Explicacion de especie</label>
+              <textarea class="tE" id="eExplicacion" rows="3" cols="50"></textarea>
+            </div>
+            <button class="btn btn-success btnAgregar" id="agregarButton">Agregar</button>
+          </form>
         </div>
       </div>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
