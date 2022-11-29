@@ -29,6 +29,7 @@ end //
 delimiter ;
 
 ------------> Agregar <------------
+
 delimiter //
 create procedure nuevoEjemplar(codigo int, fk_especie int, fecha_nac date, fecha_defuncion date, nombre varchar(20), padre varchar(25), madre varchar(25), pertenece_zoo boolean)
 begin
@@ -42,3 +43,19 @@ begin
 insert into especies (nombre_generico, nombre_cientifico, familia, descripcion_cuidado, explicacion_especie) VALUES(nombre_generico, nombre_cientifico, familia, descripcion_cuidado, explicacion_especie);
 end//
 delimiter ;
+
+------------> Eliminar <------------
+
+delimiter //
+create procedure eliminar(in tabla varchar(30), in campo_id varchar(45), in id int)
+begin
+SET @query = CONCAT("delete from ",tabla, " where ", campo_id , " = ", id,";");
+PREPARE s FROM @query; 
+EXECUTE s; 
+deallocate prepare s; 
+end//
+delimiter ;
+
+------------> Actualizar <------------
+
+------------> Buscar <------------
