@@ -59,3 +59,50 @@ delimiter ;
 ------------> Actualizar <------------
 
 ------------> Buscar <------------
+
+
+------------> Disparadores <------------
+create table disparadorEspecies (id int auto_increment primary key, datos varchar(100), accion varchar(50));
+create table disparadorEjemplares (id int auto_increment primary key, datos varchar(100), accion varchar(50));
+
+delimiter //
+create trigger nuevoEspecie before insert on especies for each row
+begin
+INSERT INTO disparadorEspecies(datos, accion) VALUES ((CONCAT(' Id especie: ', new.id_especie, ' Nombre generico : ',new.nombre_generico, ' Nombre cientifico: ' ,new.nombre_cientifico)), 'NUEVO REGISTRO INSERTADO CORRECTAMENTE');
+end //
+delimiter ;
+
+delimiter //
+create trigger eliminarEspecie before delete on especies for each row
+begin
+INSERT INTO disparadorEspecies(datos, accion) VALUES ((CONCAT(' Id especie: ', old.id_especie, ' Nombre generico : ',old.nombre_generico, ' Nombre cientifico: ' ,old.nombre_cientifico)), 'REGISTRO ELIMINADO CORRECTAMENTE');
+end //
+delimiter ;
+
+delimiter //
+create trigger nuevoEspecie before update on especies for each row
+begin
+INSERT INTO disparadorEspecies(datos, accion) VALUES ((CONCAT(' Id especie: ', new.id_especie, ' Nombre generico : ',new.nombre_generico, ' Nombre cientifico: ' ,new.nombre_cientifico)), 'REGISTRO ACTUALIZADO CORRECTAMENTE');
+end //
+delimiter ;
+
+delimiter //
+create trigger nuevoEjemplar before insert on ejemplares for each row
+begin
+INSERT INTO disparadorEjemplares(datos, accion) VALUES ((CONCAT(' Id ejemplar: ', new.id_ejemplar, ' Codigo: ',new.codigo, ' Nombre: ' ,new.nombre)), 'NUEVO REGISTRO INSERTADO CORRECTAMENTE');
+end //
+delimiter ;
+
+delimiter //
+create trigger eliminarEjemplar before delete on ejemplares for each row
+begin
+INSERT INTO disparadorEjemplares(datos, accion) VALUES ((CONCAT(' Id ejemplar: ', old.id_ejemplar, ' Codigo: ',old.codigo, ' Nombre: ' ,old.nombre)), 'REGISTRO ELIMINADO CORRECTAMENTE');
+end //
+delimiter ;
+
+delimiter //
+create trigger updateEjemplar before update on ejemplares for each row
+begin
+INSERT INTO disparadorEjemplares(datos, accion) VALUES ((CONCAT(' Id ejemplar: ', new.id_ejemplar, ' Codigo: ',new.codigo, ' Nombre: ' ,new.nombre)), 'REGISTRO ACTUALIZADO CORRECTAMENTE');
+end //
+delimiter ;
