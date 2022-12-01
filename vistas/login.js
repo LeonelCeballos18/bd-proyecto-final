@@ -13,6 +13,7 @@ iniciarSesion.addEventListener('click', () => {
         },
         body: JSON.stringify(datos),
     })
+    .then((res) => res.json())
     .then((datos) => {
         console.log('Success', datos);
         alert('Credenciales correctas')
