@@ -1,7 +1,28 @@
-let especieController = require('controllers/especieController.js');
-let router =require('express').Router()
+let router = require('express').Router();
+let especieController = require('../controllers/especiesController'); 
 
-/*router.get('/nombres', (req, res) => {
-    res.json({ message: 'Vas a ver los nombres de todas las especies'})
-    especieController.nombres(req, res);
-})*/
+router.get('/',(res)=>{
+    res.send("Estas conectado a especie");
+})
+
+router.get('/nombre-generico',(req,res)=>{
+    especieController.listarNombresGenericos(req, res);
+})
+
+router.get('/nombre-cientifico',(req,res)=>{
+    especieController.listarNombresCientifico(req, res);
+})
+
+router.post('/agregar',(req,res)=>{
+    especieController.agregar(req, res);
+})
+
+router.get('/ejemplar-especie',(req,res)=>{
+    especieController.listarEjemplarEspecie(req, res);
+})
+
+router.delete('/eliminar',(req,res)=>{
+    especieController.eliminar(req, res);
+})
+
+module.exports = router;

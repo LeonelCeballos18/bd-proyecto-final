@@ -1,7 +1,20 @@
-let ejemplaresController = require('controllers/ejemplaresController.js');
-let router =require('express').Router()
+let router=require('express').Router();
+let ejemplaresController = require('../controllers/ejemplaresController')
 
-router.get('/nombres', (req, res) => {
-    res.json({ message: 'Vas a ver los nombres de todas las especies'})
-    ejemplaresController.nombres(req, res);
+router.get('/',(res)=>{
+    res.send("Estas conectado a ejemplares")
 })
+
+router.get('/listar-nombres',(req,res)=>{
+    ejemplaresController.listarNombres(req, res);
+})
+
+router.post('/agregar',(req,res)=>{
+    ejemplaresController.agregar(req, res);
+})
+
+router.delete('/eliminar',(req,res)=>{
+    ejemplaresController.eliminar(req, res);
+})
+
+module.exports = router;

@@ -1,11 +1,13 @@
-let router = require('express').Router()
-import ejemplares from './ejemplaresRoute.js';
-router.use('/ejemplares', ejemplares);
-import especies from './especiesRoute.js';
-router.use('/especies', especies)
+let router = require('express').Router();
 
-router.get('/', (req, res) => {
+let ejemplares = require('../routes/ejemplaresRoute.js');
+router.use('/ejemplares',ejemplares)
+let especies = require('../routes/especiesRoute.js');
+router.use('/especies',especies)
+let login = require('../routes/loginRoute.js');
+router.use('/login',login)
+
+router.get('/', function (res) {
     res.status(200).json({ message: 'Estás conectado a nuestra API' })
-})
-
+  })
 module.exports = router;
