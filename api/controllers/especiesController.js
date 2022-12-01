@@ -44,5 +44,41 @@ module.exports = {
             else
                 res.json(err)
         })
+    },
+
+    actualizar:(req, res) => {
+        mysql.query(`call actualizarEspecies(${req.param.id_especie}, '${req.param.nombre_generico}', '${req.param.nombre_cientifico}', '${req.param.familia}', '${req.param.descripcion_cuidado}', '${req.param.explicacion_especie}');`, (err, results) => {
+            if(!err)
+                res.json(results)
+            else
+                res.json(err)
+        })
+    },
+
+    obtenerInfo:(req, res) => {
+        mysql.query(`call obtenerInfoEspecies(${req.param.id_especie});`, (err, results) => {
+            if(!err)
+                res.json(results)
+            else
+                res.json(err)
+        })
+    },
+
+    buscarNombre:(req, res) => {
+        mysql.query(`call buscarEspecieNombre(${req.param.nombre});`, (err, results) => {
+            if(!err)
+                res.json(results)
+            else
+                res.json(err)
+        })
+    },
+
+    buscarId:(req, res) => {
+        mysql.query(`call buscarEspecieId(${req.param.id_especie});`, (err, results) => {
+            if(!err)
+                res.json(results)
+            else
+                res.json(err)
+        })
     }
 }

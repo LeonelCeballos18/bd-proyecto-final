@@ -26,5 +26,32 @@ module.exports = {
             else
                 res.json(err)
         })
+    },
+
+    actualizar:(req, res) => {
+        mysql.query(`call actualizarEjemplares(${req.param.id}, ${req.param.codigo}, ${req.param.fk_especie}, '${req.param.fecha_nac}', '${req.param.fecha_defuncion}', '${req.param.nombre}', '${req.param.padre}', '${req.param.madre}', ${req.param.pertenece_zoo});`, (err, results) => {
+            if(!err)
+                res.json(results)
+            else
+                res.json(err)
+        })
+    },
+
+    obtenerInfo:(req, res) => {
+        mysql.query(`call obtenerInfoEjemplares(${req.param.id_ejemplar});`, (err, results) => {
+            if(!err)
+                res.json(results)
+            else
+                res.json(err)
+        })
+    },
+
+    busquedaLibre:(req, res) => {
+        mysql.query(`call busquedaLibre('${req.param.secuenciaSQL}');`, (err, results) => {
+            if(!err)
+                res.json(results)
+            else
+                res.json(err)
+        })
     }
 }
