@@ -131,3 +131,25 @@ body{
     margin-left: 76%;
     font-size: 25px;
 }
+
+.busquedas{
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.busquedas .btnB{
+    border: none;
+    border-radius: 20px;
+    padding: 5px 13px;
+    font-size: 15px;
+    background-color: #ECECEC;
+}
+
+.btnB:hover{
+    background-color: #D1D1D1;
+}
+
+.busquedas .selected{
+    color: white;
+    background-color: #117864;
+}
