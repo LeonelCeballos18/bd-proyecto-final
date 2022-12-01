@@ -106,3 +106,28 @@ body{
 .tE{
     resize: none;
 }
+
+.search-bar{
+    width: 100%;
+    background-color: #ECECEC;
+    display: flex;
+    align-items: center;
+    border-radius: 40px;
+    padding: 0px 20px;
+}
+
+.search-bar input{
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 7px 20px;
+    font-size: 18px;
+    color: #262626;
+}
+
+.search-bar .search{
+    position: absolute;
+    margin-left: 76%;
+    font-size: 25px;
+}
