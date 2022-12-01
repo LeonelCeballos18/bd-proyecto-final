@@ -38,29 +38,34 @@
               <li class="nav-item">
                 <a class="nav-link" href="../vistas/actualizar.html">Actualizar</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../vistas/reportes.html">Reportes</a>
+              </li>
             </ul>
           </div>
         </div>
       </nav>
       <div class="main-container">
-        <h2 class="tittle">Buscador</h2>
+        <h2 class="tittle">Busqueda</h2>
         <div class="search-bar">
           <ion-icon name="search" class="search"></ion-icon>
-          <input type="text" class="" placeholder="busca algo....">
+          <input type="text" id="bsqEspecies" placeholder="busca algo....">
         </div>
         <div class="busquedas">
           <button class="btnB" id="btnId">Busqueda por id</button>
           <button class="btnB" id="btnName">Busqueda por nombre</button>
-          <button class="btnB" id="btnBl">Busqueda Libre</button>
         </div>
-
+        <br>
+        <h2>Especies</h2>
         <table class="table">
-          <!--<thead>  Esto lo vas a regresar con los datos, solo sigue la estructura de la tabla
+          <thead>
             <tr>
               <th scope="col">Id</th>
-              <th scope="col">2do</th>
-              <th scope="col">3ro</th>
-              <th scope="col">4rto</th>
+              <th scope="col">Nombre generico</th>
+              <th scope="col">Nombre cientifico</th>
+              <th scope="col">Familia</th>
+              <th scope="col">Cuidado</th>
+              <th scope="col">Explicacion</th>
             </tr>
           </thead>
           <tbody>
@@ -69,20 +74,85 @@
               <td>Mark</td>
               <td>Otto</td>
               <td>@mdo</td>
+              <td>Mark</td>
+              <td>Otto</td>
             </tr>
             <tr>
               <th scope="row">2</th>
               <td>Jacob</td>
               <td>Thornton</td>
               <td>@fat</td>
+              <td>Mark</td>
+              <td>Otto</td>
             </tr>
             <tr>
               <th scope="row">3</th>
-              <td colspan="2">Larry the Bird</td>
+              <td >Larry the Bird</td>
               <td>@twitter</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
             </tr>
           </tbody>
-        -->
+        </table>
+        <br>
+        <br>
+        <h2>Busqueda Libre</h2>
+        <div class="search-bar">
+          <ion-icon name="search" class="search"></ion-icon>
+          <input type="text" id="bsqEjemplares" placeholder="busca algo....">
+        </div>
+        <br>
+        <h2>Ejemplares</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">codigo</th>
+              <th scope="col">fk_especie</th>
+              <th scope="col">Nacimiento</th>
+              <th scope="col">Defuncion</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Padre</th>
+              <th scope="col">Madre</th>
+              <th scope="col">Pertenece a zoo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+              <td>Mark</td>
+              <td>Otto</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+              <td>Mark</td>
+              <td>Otto</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td >Larry the Bird</td>
+              <td>@twitter</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>Otto</td>
+            </tr>
+          </tbody>
         </table>
       </div>
       <script src="../vistas/buscador.js"></script>
